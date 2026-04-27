@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rag-quality-kit"
+version = "0.1.0"
+description = "Heuristic quality metrics for RAG retrieval and grounded answers. Python port of @mukundakatta/rag-quality-kit."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mukunda Rao Katta", email = "mukunda.vjcs6@gmail.com" }]
+keywords = [
+  "rag",
+  "retrieval",
+  "evaluation",
+  "grounding",
+  "llm",
+  "ai",
+  "agents",
+  "quality",
+  "metrics",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/MukundaKatta/rag-quality-kit-py"
+Issues = "https://github.com/MukundaKatta/rag-quality-kit-py/issues"
+Source = "https://github.com/MukundaKatta/rag-quality-kit-py"
+"JS sibling" = "https://github.com/MukundaKatta/rag-quality-kit"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rag_quality_kit"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/README.md", "/LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
